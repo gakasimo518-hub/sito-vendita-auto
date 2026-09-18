@@ -1,2 +1,5 @@
 # sito-vendita-auto
-Sito web per la vendita di auto con area pubblica e pannello admin per gestione catalogo e ordini
+
+Generato da **AI Software House**.
+
+**Stack:** HTML + CSS (Bootstrap 5) + vanilla JS, PHP 8 (procedurale o OOP), MySQL, Bootstrap 5

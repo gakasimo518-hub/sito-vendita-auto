@@ -1,0 +1,128 @@
+:root {
+  /* -------------------------------------------------
+     Color Palette
+  ------------------------------------------------- */
+  --color-primary: #0d6efd;               /* Bootstrap primary */
+  --color-primary-dark: #0a58ca;
+  --color-primary-light: #3d8bfd;
+  --color-secondary: #6c757d;             /* Bootstrap secondary */
+  --color-success: #198754;               /* Bootstrap success */
+  --color-danger: #dc3545;                /* Bootstrap danger */
+  --color-warning: #ffc107;               /* Bootstrap warning */
+  --color-info: #0dcaf0;                  /* Bootstrap info */
+  --color-light: #f8f9fa;                 /* Bootstrap light */
+  --color-dark: #212529;                  /* Bootstrap dark */
+  --color-accent: #ff6f61;                /* CTA / accent */
+  --color-background: #ffffff;           /* Page background */
+  --color-surface: #f1f3f5;               /* Cards, panels */
+  --color-text-primary: #212529;         /* Main text */
+  --color-text-secondary: #495057;       /* Secondary text */
+  --color-muted: #6c757d;                /* Muted text */
+  --color-border: #dee2e6;               /* Default border */
+  --color-divider: #e9ecef;              /* Divider lines */
+
+  /* -------------------------------------------------
+     Typography
+  ------------------------------------------------- */
+  --font-family-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-family-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --font-size-0: 0.75rem;   /* 12px */
+  --font-size-1: 0.875rem;  /* 14px */
+  --font-size-2: 1rem;      /* 16px */
+  --font-size-3: 1.125rem;  /* 18px */
+  --font-size-4: 1.25rem;   /* 20px */
+  --font-size-5: 1.5rem;    /* 24px */
+  --font-size-6: 2rem;      /* 32px */
+  --font-size-7: 2.5rem;    /* 40px */
+  --font-size-8: 3rem;      /* 48px */
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --line-height-sm: 1.25;
+  --line-height-base: 1.5;
+  --line-height-lg: 1.75;
+
+  /* -------------------------------------------------
+     Spacing Scale (based on 0.25rem = 4px)
+  ------------------------------------------------- */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.5rem;    /* 24px */
+  --space-6: 2rem;      /* 32px */
+  --space-7: 3rem;      /* 48px */
+  --space-8: 4rem;      /* 64px */
+  --space-9: 5rem;      /* 80px */
+  --space-10: 6rem;     /* 96px */
+
+  /* -------------------------------------------------
+     Border Radius
+  ------------------------------------------------- */
+  --radius-sm: 0.2rem;
+  --radius: 0.25rem;
+  --radius-lg: 0.3rem;
+  --radius-pill: 50rem;
+  --radius-circle: 50%;
+
+  /* -------------------------------------------------
+     Shadows
+  ------------------------------------------------- */
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  --shadow-none: none;
+
+  /* -------------------------------------------------
+     Transitions
+  ------------------------------------------------- */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-base: 0.25s ease-in-out;
+  --transition-slow: 0.35s ease-in-out;
+
+  /* -------------------------------------------------
+     Z-Index Scale
+  ------------------------------------------------- */
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* -------------------------------------------------
+     Breakpoints (Bootstrap 5 defaults)
+  ------------------------------------------------- */
+  --breakpoint-xs: 0;          /* <576px */
+  --breakpoint-sm: 576px;      /* ≥576px */
+  --breakpoint-md: 768px;      /* ≥768px */
+  --breakpoint-lg: 992px;      /* ≥992px */
+  --breakpoint-xl: 1200px;     /* ≥1200px */
+  --breakpoint-xxl: 1400px;    /* ≥1400px */
+
+  /* -------------------------------------------------
+     Container Widths (max-width at each breakpoint)
+  ------------------------------------------------- */
+  --container-sm: 540px;
+  --container-md: 720px;
+  --container-lg: 960px;
+  --container-xl: 1140px;
+  --container-xxl: 1320px;
+}
+
+/* Utility classes for quick reference (optional) */
+[data-theme="dark"] {
+  --color-background: #212529;
+  --color-surface: #2c2f33;
+  --color-text-primary: #f8f9fa;
+  --color-text-secondary: #ced4da;
+  --color-border: #495057;
+  --color-muted: #adb5bd;
+}

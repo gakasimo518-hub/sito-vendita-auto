@@ -1,0 +1,197 @@
+/* -------------------------------------------------
+   Animations & Micro‑Interactions
+   ------------------------------------------------- */
+
+/* -------------------------------------------------
+   CSS Custom Properties (fallback defaults)
+   ------------------------------------------------- */
+:root {
+  --anim-duration-fast: 150ms;
+  --anim-duration-medium: 300ms;
+  --anim-duration-slow: 600ms;
+  --anim-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --anim-easing-in: cubic-bezier(0.0, 0, 0.2, 1);
+  --anim-easing-out: cubic-bezier(0.4, 0, 1, 1);
+  --spinner-size: 2.5rem;
+  --spinner-color: var(--color-primary, #0d6efd);
+}
+
+/* -------------------------------------------------
+   Fade‑In
+   ------------------------------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.fade-in {
+  animation: fadeIn var(--anim-duration-medium) var(--anim-easing) forwards;
+}
+
+/* -------------------------------------------------
+   Slide‑Up (used for cards, modals, etc.)
+   ------------------------------------------------- */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slide-up {
+  animation: slideUp var(--anim-duration-medium) var(--anim-easing) forwards;
+}
+
+/* -------------------------------------------------
+   Button Hover & Focus
+   ------------------------------------------------- */
+.btn,
+.button {
+  position: relative;
+  overflow: hidden;
+  transition: background-color var(--anim-duration-fast) var(--anim-easing),
+              color var(--anim-duration-fast) var(--anim-easing),
+              box-shadow var(--anim-duration-fast) var(--anim-easing);
+}
+.btn:hover,
+.button:hover {
+  background-color: rgba(0,0,0,0.08);
+  color: inherit;
+}
+.btn:focus,
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13,110,253,0.25);
+}
+
+/* -------------------------------------------------
+   Input Focus (text, textarea, select)
+   ------------------------------------------------- */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+textarea,
+select {
+  transition: border-color var(--anim-duration-fast) var(--anim-easing),
+              box-shadow var(--anim-duration-fast) var(--anim-easing);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-primary, #0d6efd);
+  box-shadow: 0 0 0 3px rgba(13,110,253,0.15);
+}
+
+/* -------------------------------------------------
+   Loading Spinner (CSS only)
+   ------------------------------------------------- */
+.spinner {
+  display: inline-block;
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  border: 0.25em solid rgba(0,0,0,0.1);
+  border-top-color: var(--spinner-color);
+  border-radius: 50%;
+  animation: spin var(--anim-duration-slow) linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* -------------------------------------------------
+   Card Hover Elevation
+   ------------------------------------------------- */
+.card-hover {
+  transition: transform var(--anim-duration-fast) var(--anim-easing),
+              box-shadow var(--anim-duration-fast) var(--anim-easing);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* -------------------------------------------------
+   Fade‑Out (utility for dismissing elements)
+   ------------------------------------------------- */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+.fade-out {
+  animation: fadeOut var(--anim-duration-medium) var(--anim-easing-out) forwards;
+}
+
+/* -------------------------------------------------
+   Slide‑Down (used for dropdowns, accordions)
+   ------------------------------------------------- */
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slide-down {
+  animation: slideDown var(--anim-duration-medium) var(--anim-easing) forwards;
+}
+
+/* -------------------------------------------------
+   Transition Helper Classes
+   ------------------------------------------------- */
+.transition-all {
+  transition: all var(--anim-duration-medium) var(--anim-easing);
+}
+.transition-opacity {
+  transition: opacity var(--anim-duration-medium) var(--anim-easing);
+}
+.transition-transform {
+  transition: transform var(--anim-duration-medium) var(--anim-easing);
+}
+
+/* -------------------------------------------------
+   Modal Entrance (combined fade + slide)
+   ------------------------------------------------- */
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.modal-enter {
+  animation: modalEnter var(--anim-duration-slow) var(--anim-easing-out) forwards;
+}
+
+/* -------------------------------------------------
+   Tooltip Fade‑In
+   ------------------------------------------------- */
+@keyframes tooltipFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.tooltip-fade-in {
+  animation: tooltipFadeIn var(--anim-duration-fast) var(--anim-easing) forwards;
+}
+
+/* -------------------------------------------------
+   Accessibility: prefers-reduced-motion
+   ------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
